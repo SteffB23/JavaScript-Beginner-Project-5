@@ -3,7 +3,21 @@
     --secondary: #00acc2;
     --dark: #1c1c20;
     --light: #00d7c7;
+    --white: #ffffff;
 }
+
+.element {
+    animation: pulse 5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #001F3F;
+    }
+    100% {
+      background-color: #FF4136;
+    }
+  }
 
 * {
     margin: 0;  
@@ -14,13 +28,14 @@ body{
     /*font-family: LINK FONT HERE;*/
     width: 100%;
     min-height: 100vh;
+    background-color: var(--dark)
 }
 
 .card {
     margin: 100px auto 0;
     width: 400px;
     height: 600px;
-    perspective: 600px;
+    perspective: 1000px;
 }
 
 .card__inner {
@@ -43,7 +58,7 @@ body{
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 25px;
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 .card__face--front{
@@ -57,7 +72,7 @@ body{
     font-size: 32px;
 }
 .card__face--back {
-    background-color: var(--light);
+    background-color: var(--white);
     transform: rotateY(180deg);
 }
 .card__content {
@@ -83,12 +98,14 @@ body{
 
 .avatar {
     display: block;
-    width: 128px;
-    height: 128px;
+    width: 275px;
+    height: 275px;
     margin: 0 30px;
     background-color: aliceblue;
     border: 5px solid cornflowerblue;
     object-fit: cover;
+    border-radius: 90px;
+    animation: pulse 5s infinite;
 }
 
 .card__header h2 {
@@ -100,12 +117,14 @@ body{
 }
 .card__body {
     padding: 30px;
+    text-align: center;
 }
 .card__body h3 {
     color: var(--dark);
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 15px;
+    text-align: center;
 }
 .card__body p {
     color: var(--dark);
